@@ -15,11 +15,6 @@
     "homepage": "https://minecraft.curseforge.com/projects/modmenu",
     "issues": "https://github.com/Prospector/ModMenu/issues"
   },
-  "depends": {
-    "fabric-resource-loader-v0": "*",
-    "fabricloader": ">=0.6.1",
-    "minecraft": "<1.15-"
-  },
   "authors": [
     "Prospector"
   ],

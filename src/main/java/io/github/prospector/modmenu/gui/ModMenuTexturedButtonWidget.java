@@ -12,16 +12,16 @@ public class ModMenuTexturedButtonWidget extends ButtonWidget {
 	private final int uWidth;
 	private final int vHeight;
 
-	protected ModMenuTexturedButtonWidget(int x, int y, int width, int height, int u, int v, Identifier texture, PressAction onPress) {
-		this(x, y, width, height, u, v, texture, 256, 256, onPress);
+	protected ModMenuTexturedButtonWidget(int id, int x, int y, int width, int height, int u, int v, Identifier texture) {
+		this(id, x, y, width, height, u, v, texture, 256, 256);
 	}
 
-	protected ModMenuTexturedButtonWidget(int x, int y, int width, int height, int u, int v, Identifier texture, int uWidth, int vHeight, PressAction onPress) {
-		this(x, y, width, height, u, v, texture, uWidth, vHeight, onPress, "");
+	protected ModMenuTexturedButtonWidget(int id, int x, int y, int width, int height, int u, int v, Identifier texture, int uWidth, int vHeight) {
+		this(id, x, y, width, height, u, v, texture, uWidth, vHeight, "");
 	}
 
-	protected ModMenuTexturedButtonWidget(int x, int y, int width, int height, int u, int v, Identifier texture, int uWidth, int vHeight, PressAction onPress, String message) {
-		super(x, y, width, height, message, onPress);
+	protected ModMenuTexturedButtonWidget(int id, int x, int y, int width, int height, int u, int v, Identifier texture, int uWidth, int vHeight, String message) {
+		super(id, x, y, width, height, message);
 		this.uWidth = uWidth;
 		this.vHeight = vHeight;
 		this.u = u;
@@ -35,8 +35,7 @@ public class ModMenuTexturedButtonWidget extends ButtonWidget {
 	}
 
 	@Override
-	public void renderButton(int mouseX, int mouseY, float delta) {
-		MinecraftClient client = MinecraftClient.getInstance();
+	public void renderBg(MinecraftClient client, int mouseX, int mouseY) {
 		client.getTextureManager().bindTexture(this.texture);
 		GlStateManager.color4f(1, 1, 1, 1f);
 		GlStateManager.disableDepthTest();
@@ -47,7 +46,7 @@ public class ModMenuTexturedButtonWidget extends ButtonWidget {
 			adjustedV += this.height;
 		}
 
-		blit(this.x, this.y, this.u, adjustedV, this.width, this.height, this.uWidth, this.vHeight);
+		drawTexture(this.x, this.y, this.u, adjustedV, this.width, this.height, this.uWidth, this.vHeight);
 		GlStateManager.enableDepthTest();
 	}
 }
