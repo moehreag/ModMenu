@@ -44,5 +44,8 @@
   ],
   "custom": {
     "modmenu:clientsideOnly": true
+  },
+  "depends": {
+    "legacy-fabric-api": "*"
   }
 }
