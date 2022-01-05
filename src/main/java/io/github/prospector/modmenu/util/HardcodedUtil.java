@@ -13,6 +13,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+// TODO: Change fabric api modules to rewoven api modules
 public class HardcodedUtil {
 	private static final Pattern FABRIC_PATTERN = Pattern.compile("^fabric-.*(-v\\d+)$");
 	private static final Set<String> FABRIC_MODS = new HashSet<>();

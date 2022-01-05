@@ -77,7 +77,7 @@ public class ModListWidget extends EntryListWidget implements AutoCloseable {
 	}
 
 	@Override
-	protected int getEntriesSize() {
+	protected int getEntryCount() {
 		return entries.size();
 	}
 
@@ -191,7 +191,7 @@ public class ModListWidget extends EntryListWidget implements AutoCloseable {
 	public final ModListEntry getEntryAtPos(double x, double y) {
 		int int_5 = MathHelper.floor(y - (double) this.yStart) - this.headerHeight + (int) this.getScrollAmount() - 4;
 		int index = int_5 / this.entryHeight;
-		return x < (double) this.getScrollbarPosition() && x >= (double) getRowLeft() && x <= (double) (getRowLeft() + getRowWidth()) && index >= 0 && int_5 >= 0 && index < this.getEntriesSize() ? entries.get(index) : null;
+		return x < (double) this.getScrollbarPosition() && x >= (double) getRowLeft() && x <= (double) (getRowLeft() + getRowWidth()) && index >= 0 && int_5 >= 0 && index < this.getEntryCount() ? entries.get(index) : null;
 	}
 
 	@Override

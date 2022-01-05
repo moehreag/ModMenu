@@ -12,8 +12,7 @@
     ]
   },
   "contact": {
-    "homepage": "https://minecraft.curseforge.com/projects/modmenu",
-    "issues": "https://github.com/Prospector/ModMenu/issues"
+    "issues": "https://github.com/BoogieMonster1O1/modmenu/issues"
   },
   "authors": [
     "Prospector"
@@ -46,6 +45,6 @@
     "modmenu:clientsideOnly": true
   },
   "depends": {
-    "legacy-fabric-api": "*"
+    "legacy-rewoven-api": "*"
   }
 }

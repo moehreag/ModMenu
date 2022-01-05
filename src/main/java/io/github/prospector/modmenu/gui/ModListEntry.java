@@ -20,7 +20,7 @@ import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.widget.EntryListWidget;
 import net.minecraft.client.texture.NativeImageBackedTexture;
-import net.minecraft.client.texture.TextureUtils;
+import net.minecraft.client.texture.TextureUtil;
 import net.minecraft.util.Identifier;
 
 import net.fabricmc.loader.api.FabricLoader;
@@ -116,7 +116,7 @@ public class ModListEntry implements EntryListWidget.Entry {
 				return cached;
 			}
 			try (InputStream inputStream = Files.newInputStream(path)) {
-				BufferedImage image = TextureUtils.create(Objects.requireNonNull(inputStream));
+				BufferedImage image = TextureUtil.create(Objects.requireNonNull(inputStream));
 				Validate.validState(image.getHeight() == image.getWidth(), "Must be square icon");
 				NativeImageBackedTexture tex = new NativeImageBackedTexture(image);
 				this.list.cacheModIcon(path, tex);
