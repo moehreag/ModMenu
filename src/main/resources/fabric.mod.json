@@ -43,8 +43,5 @@
   ],
   "custom": {
     "modmenu:clientsideOnly": true
-  },
-  "depends": {
-    "legacy-rewoven-api": "*"
   }
 }
