@@ -89,12 +89,12 @@ publishing {
 
 	// select the repositories you want to publish to
 	repositories {
-		if (project.hasProperty('legacy_fabric_maven_publish_token')) {
+		if (project.hasProperty('maven_publish_token')) {
 			maven {
 				url 'https://maven.legacyfabric.net/'
 				credentials {
 					username 'BobTheBuildSlave'
-					password project.getProperty('legacy_fabric_maven_publish_token')
+					password project.getProperty('maven_publish_token')
 				}
 				authentication {
 					basic(BasicAuthentication)
