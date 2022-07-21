@@ -31,7 +31,7 @@ public class DescriptionListWidget extends EntryListWidget {
 	}
 
 	@Override
-	protected int getEntriesSize() {
+	protected int getEntryCount() {
 		return entries.size();
 	}
 

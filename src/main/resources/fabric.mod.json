@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "modmenu",
   "name": "Mod Menu",
-  "version": "$version",
+  "version": "${version}",
   "environment": "client",
   "license": "MIT",
   "icon": "assets/modmenu/icon.png",
@@ -12,8 +12,8 @@
     ]
   },
   "contact": {
-    "homepage": "https://minecraft.curseforge.com/projects/modmenu",
-    "issues": "https://github.com/Prospector/ModMenu/issues"
+    "homepage": "https://github.com/BoogieMonster1O1/ModMenu",
+    "issues": "https://github.com/BoogieMonster1O1/ModMenu/issues"
   },
   "authors": [
     "Prospector"
