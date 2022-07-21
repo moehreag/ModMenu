@@ -1,7 +1,7 @@
 plugins {
 	id 'maven-publish'
 	id 'fabric-loom' version "0.12-SNAPSHOT"
-	//id "com.modrinth.minotaur" version "1.1.0"
+	id "com.modrinth.minotaur" version "1.2.1"
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -19,7 +19,7 @@ repositories {
 }
 
 loom {
-	setIntermediaryUrl('https://maven.legacyfabric.net/net/fabricmc/intermediary/%1$s/intermediary-%1$s-v2.jar');
+	setIntermediaryUrl('https://maven.legacyfabric.net/net/fabricmc/intermediary/%1$s/intermediary-%1$s-v2.jar')
 }
 
 dependencies {
@@ -27,7 +27,7 @@ dependencies {
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-	modImplementation ("net.legacyfabric.legacy-fabric-api:legacy-fabric-api:${fabric_version}") {
+	modImplementation("net.legacyfabric.legacy-fabric-api:legacy-fabric-api:${fabric_version}") {
 		exclude module: "legacy-fabric-entity-events-v1"
 	}
 
@@ -101,20 +101,19 @@ publishing {
 	}
 }
 
-// TODO:
-// task modrinth(type: com.modrinth.minotaur.TaskModrinthUpload, dependsOn: remapJar) {
-// 	onlyIf {
-// 		project.hasProperty('modrinth_token')
-// 	}
+task modrinth(type: com.modrinth.minotaur.TaskModrinthUpload) {
+	onlyIf {
+		project.hasProperty('modrinth_token')
+	}
 
-// 	token = project.hasProperty('modrinth_token') ? project.getProperty('modrinth_token') : ""
-// 	projectId = "XzTYkVLx"
-// 	versionNumber = project.version
-// 	versionName = "[1.8.9] Legacy Mod Menu ${project.version}"
-// 	releaseType = "release"
+	token = project.hasProperty('modrinth_token') ? project.getProperty('modrinth_token') : ""
+	projectId = "XzTYkVLx"
+	versionNumber = project.version
+	versionName = "[1.8.9] Legacy Mod Menu ${project.version}"
+	versionType = "RELEASE"
 
-// 	uploadFile = file("${project.buildDir}/libs/${archivesBaseName}-${version}.jar")
+	uploadFile = remapJar
 
-// 	addGameVersion('1.8.9')
-// 	addLoader('fabric')
-// }
+	addGameVersion('1.8.9')
+	addLoader('fabric')
+}
