@@ -62,7 +62,7 @@ public class HardcodedUtil {
 				ModMenu.CLIENTSIDE_MODS.add(id);
 			}
 		}
-		if (id.equals("fabricloader") || id.equals("fabric") || metadata.getName().endsWith(" API")) {
+		if (id.equals("fabricloader") || id.equals("fabric") || metadata.getName().endsWith(" API") || metadata.getName().startsWith("Legacy Fabric") || metadata.getAuthors().stream().anyMatch(a -> a.getName().equals("Legacy-Fabric"))) {
 			ModMenu.addLibraryMod(id);
 		}
 	}
